@@ -104,6 +104,15 @@ public class ContactsFragment extends Fragment implements LoaderManager.LoaderCa
                 loadContact();
             }
         });*/
+
+        Button button = (Button) rootView.findViewById(R.id.contact_load);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                loadContact();
+            }
+        });
+
         return rootView;
     }
 
