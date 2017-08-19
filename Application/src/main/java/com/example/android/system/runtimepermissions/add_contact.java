@@ -31,6 +31,10 @@ public class add_contact extends AppCompatActivity {
             Log.i("Phone", phone.getText().toString());
             Toast.makeText(this, "Contact successfully added!", Toast.LENGTH_LONG).show();
         }
-
     }
+
+   public void onBackPressed(View view){
+       super.onBackPressed();
+   }
+
 }
