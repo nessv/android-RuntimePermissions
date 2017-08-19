@@ -24,12 +24,19 @@ public class add_contact extends AppCompatActivity {
         EditText phone = (EditText) findViewById(R.id.phoneText);
 
         //Si estan vacios se muestra un toast
-        if(name.getText().length() == 0 || phone.getText().length() == 0)
+
+        if(name.getText().length() == 0 && phone.getText().length() == 0)
             Toast.makeText(this, "The fields can't be empty!", Toast.LENGTH_LONG).show();
-        else {
+        else if (name.getText().length() == 0){
+            Toast.makeText(this, "NAME field can't be empty!", Toast.LENGTH_LONG).show();
+        }else if (phone.getText().length() == 0){
+            Toast.makeText(this, "PHONE field can't be empty!", Toast.LENGTH_LONG).show();
+        }else{
             Log.i("Name", name.getText().toString());
             Log.i("Phone", phone.getText().toString());
             Toast.makeText(this, "Contact successfully added!", Toast.LENGTH_LONG).show();
+            name.setText("");
+            phone.setText("");
         }
     }
 
